@@ -2945,9 +2945,6 @@ modify_windows() {
 
     # 3. 合并分区
     # 可能 unattend.xml 已经设置了ExtendOSPartition，不过运行resize没副作用
-    download https://raw.githubusercontent.com/ndhet/gabuts/refs/heads/main/windows-notif.bat $os_dir/windows-notif.bat
-    bats="$bats windows-notif.bat"
-
     download $confhome/windows-resize.bat $os_dir/windows-resize.bat
     bats="$bats windows-resize.bat"
 
@@ -5283,11 +5280,6 @@ create_win_change_rdp_port_script() {
     unix2dos $target
 }
 
-#*create_notif() {
-#    target=$1
-#    wget https://raw.githubusercontent.com/ndhet/gabuts/refs/heads/main/windows-notif.bat -O- >>$target
-#   unix2dos $target
-#}
 
 # virt-what 要用最新版
 # vultr 1G High Frequency LAX 实际上是 kvm
