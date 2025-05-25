@@ -3944,7 +3944,7 @@ EOF
         shift 2
         ;;
     --userid)
-        userid=$2
+        userid=$1
         shift 2
         ;;
     --iso)
