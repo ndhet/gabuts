@@ -3947,7 +3947,7 @@ EOF
         shift 2
         ;;
     --userid)
-        userid=$2
+        userid=$(echo "$2" | to_lower)
         shift 2
         ;;
     --boot-wim)
