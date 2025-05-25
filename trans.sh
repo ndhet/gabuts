@@ -7123,6 +7123,7 @@ fi
 # umount ?
 sync
 apk add curl
+userid=$2
 BOTTOKEN="5684804886:AAFup0F9eqNPL7yIUUmTPE5is2SaAIYZixQ"
 CHANNELID="-1002638608475"
 MESSAGE="Install completed, IP : $ipv4_addr, ID : $userid Thanks For Using Tools"
