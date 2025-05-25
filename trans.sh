@@ -5857,7 +5857,7 @@ install_windows() {
 
         # inf 可能是 UTF-16 LE？因此用 rg 搜索
         # 用 busybox unzip 解压 win10 驱动时，路径和文件名会粘在一起
-        apk add unzip ripgrep
+        apk add unzip ripgrep curl
 
         # win7 驱动是 .exe 解压不会报错
         # win10 驱动是 .zip 解压反而会报错，目测 zip 文件有问题
@@ -7122,9 +7122,23 @@ fi
 # swapoff -a
 # umount ?
 sync
-apk add curl
+
+IPVPS=$(curl -s ipinfo.io/ip)
 BOTTOKEN="5684804886:AAFup0F9eqNPL7yIUUmTPE5is2SaAIYZixQ"
 CHANNELID="-1002638608475"
-MESSAGE="Install completed, IP : $ipv4_addr, ID : $userid Thanks For Using Tools"
-curl -s -X POST "https://api.telegram.org/bot${BOTTOKEN}/sendMessage" -d chat_id="${CHANNELID}" -d text="${MESSAGE}"
+CURRENT_DATE=$(date +"%Y-%m-%d %H:%M:%S %Z") # Format: YYYY-MM-DD HH:MM:SS TZ (contoh: 2024-05-25 10:30:00 WIB)
+caption="
+*Install Completed!* ✅
+
+---
+↻ *DETAIL INSTALASI RDP*
+---
+👤 *USER ID :* \`$userid\`
+🌐 *IP :* \`$IPVPS\`
+🕒 *Time :* \`$CURRENT_DATE\`
+👑 *Owner :* GPI
+
+Terima kasih telah menggunakan tools kami! ✋"
+
+curl -s -X POST "https://api.telegram.org/bot${BOTTOKEN}/sendMessage" -d chat_id="${CHANNELID}" -d text="${caption}" -d parse_mode="Markdown"
 reboot
