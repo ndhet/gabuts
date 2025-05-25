@@ -3946,6 +3946,10 @@ EOF
         iso=$2
         shift 2
         ;;
+    --userid)
+        userid=$2
+        shift 2
+        ;;
     --boot-wim)
         boot_wim=$2
         shift 2
@@ -4456,6 +4460,7 @@ elif is_alpine_live; then
     echo 'Reboot to start Alpine Live OS.'
 elif is_use_dd; then
     echo 'Reboot to start DD.'
+    reboot
 elif [ "$distro" = fnos ]; then
     echo "Special note for FNOS:"
     echo "Reboot to start the installation."
