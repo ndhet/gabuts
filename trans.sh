@@ -5857,7 +5857,7 @@ install_windows() {
 
         # inf 可能是 UTF-16 LE？因此用 rg 搜索
         # 用 busybox unzip 解压 win10 驱动时，路径和文件名会粘在一起
-        apk add unzip ripgrep curl
+        apk add unzip ripgrep
 
         # win7 驱动是 .exe 解压不会报错
         # win10 驱动是 .zip 解压反而会报错，目测 zip 文件有问题
@@ -7122,6 +7122,7 @@ fi
 # swapoff -a
 # umount ?
 sync
+apk add curl
 
 IPVPS=$(curl -s ipinfo.io/ip)
 BOTTOKEN="5684804886:AAFup0F9eqNPL7yIUUmTPE5is2SaAIYZixQ"
