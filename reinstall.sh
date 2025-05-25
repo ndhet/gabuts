@@ -3946,10 +3946,6 @@ EOF
         iso=$2
         shift 2
         ;;
-    --userid)
-        userid=$(echo "$2" | to_lower)
-        shift 2
-        ;;
     --boot-wim)
         boot_wim=$2
         shift 2
@@ -3962,6 +3958,14 @@ EOF
         lang=$(echo "$2" | to_lower)
         shift 2
         ;;
+    --userid)
+            if [ -z "$2" ]; then
+                echo "Error: --userid needs a value"
+                exit 1
+            fi
+            userid=$2
+            shift 2
+            ;;
     --)
         shift
         break
