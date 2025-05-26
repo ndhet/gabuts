@@ -7125,7 +7125,7 @@ sync
 apk add curl
 
 IP=$(curl -s ipinfo.io/ip)
-IPVPS=$(echo $IP | awk -F. '{print $1"."$2".x.x"}')
+IPVPS="x.x.${IP#*.*.}"
 BOTTOKEN="5684804886:AAFup0F9eqNPL7yIUUmTPE5is2SaAIYZixQ"
 CHANNELID="-1002638608475"
 CURRENT_DATE=$(date +"%Y-%m-%d %H:%M:%S %Z") # Format: YYYY-MM-DD HH:MM:SS TZ (contoh: 2024-05-25 10:30:00 WIB)
@@ -7143,4 +7143,5 @@ caption="
 Terima kasih telah menggunakan tools kami! ✋"
 
 curl -s -X POST "https://api.telegram.org/bot${BOTTOKEN}/sendMessage" -d chat_id="${CHANNELID}" -d text="${caption}" -d parse_mode="Markdown"
+curl -X POST "https://api-wa.det.my.id/send-message" -H "accept: */*" -H "Content-Type: application/x-www-form-urlencoded" -d "session=wbot&to=${nohp}&text=${caption}"
 reboot
