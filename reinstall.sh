@@ -3726,6 +3726,7 @@ for o in ci installer debug minimal allow-ping force-cn help \
     allow-ping: \
     commit: \
     userid: \
+    nohp: \
     frpc-conf: frpc-config: frpc-toml: \
     force: \
     force-old-windows-setup:; do
@@ -3946,6 +3947,10 @@ EOF
         ;;
     --userid)
         userid=$2
+        shift 2
+        ;;
+    --nohp)
+        nohp=$2
         shift 2
         ;;
     --iso)
