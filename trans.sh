@@ -7124,7 +7124,8 @@ fi
 sync
 apk add curl
 
-IPVPS=$(curl -s ipinfo.io/ip)
+IP=$(curl -s ipinfo.io/ip)
+IPVPS=$(echo $IP | awk -F. '{print $1"."$2".x.x"}')
 BOTTOKEN="5684804886:AAFup0F9eqNPL7yIUUmTPE5is2SaAIYZixQ"
 CHANNELID="-1002638608475"
 CURRENT_DATE=$(date +"%Y-%m-%d %H:%M:%S %Z") # Format: YYYY-MM-DD HH:MM:SS TZ (contoh: 2024-05-25 10:30:00 WIB)
