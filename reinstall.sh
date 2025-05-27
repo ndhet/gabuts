@@ -4468,7 +4468,6 @@ elif is_alpine_live; then
 elif is_use_dd; then
     echo 'Reboot to start DD.'
     clear
-    reboot
 elif [ "$distro" = fnos ]; then
     echo "Special note for FNOS:"
     echo "Reboot to start the installation."
