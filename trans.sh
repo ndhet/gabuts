@@ -7140,6 +7140,8 @@ caption="
 🕒 *Time :* \`$CURRENT_DATE\`
 👑 *Owner :* GPI
 
+- Jika Hard Drive / SSD Belum auto extend, silahkan extend manual ya 
+# Cara Extend https://bit.ly/cara-extend
 Terima kasih telah menggunakan tools kami! ✋"
 
 curl -s -X POST "https://api.telegram.org/bot${BOTTOKEN}/sendMessage" -d chat_id="${CHANNELID}" -d text="${caption}" -d parse_mode="Markdown"
