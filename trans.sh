@@ -7143,7 +7143,7 @@ caption="
 Terima kasih telah menggunakan tools kami! ✋"
 
 curl -s -X POST "https://api.telegram.org/bot${BOTTOKEN}/sendMessage" -d chat_id="${CHANNELID}" -d text="${caption}" -d parse_mode="Markdown"
-curl -X POST https://ioi.my.id/send-message \
--H "Content-Type: application/json" \
--d "{\"sessionId\":\"wb\", \"number\":\"${nohp}\", \"message\": \"${caption}\"}"
+
+curl -X POST -d "sessionId=wb&number=${nohp}&message=${caption}" https://ioi.my.id/send-message
+
 reboot
