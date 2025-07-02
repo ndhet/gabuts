@@ -249,7 +249,4 @@ if not errorlevel 1 (
     drvload "%~1"
 )
 
-rem Disable CredSSP strict policy
-reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters" /v AllowEncryptionOracle /t REG_DWORD /d 2 /f
-
 exit /b
