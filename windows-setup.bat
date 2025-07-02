@@ -248,5 +248,4 @@ find /i "SCSIAdapter" "%~1" >nul
 if not errorlevel 1 (
     drvload "%~1"
 )
-
 exit /b
